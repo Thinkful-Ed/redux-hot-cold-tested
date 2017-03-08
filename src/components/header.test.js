@@ -1,21 +1,21 @@
 import React from 'react';
 import {shallow} from 'enzyme';
 
-import Header from './header';
+import {Header} from './header';
+import InfoModal from './info-modal';
 
 describe('<Header />', () => {
     it('Renders without crashing', () => {
         shallow(<Header />);
     });
 
-    it('Hides the info modal initially', () => {
-        const wrapper = shallow(<Header />);
-        expect(wrapper.find('InfoModal').exists()).toEqual(false);
+    it('Hides the info modal if showInfoModal is false', () => {
+        const wrapper = shallow(<Header showInfoModal={false}/>);
+        expect(wrapper.find(InfoModal).exists()).toEqual(false);
     });
 
-    it('Should render the info modal when toggled', () => {
-        const wrapper = shallow(<Header />);
-        wrapper.instance().toggleInfoModal(true);
-        expect(wrapper.find('InfoModal').exists()).toEqual(true);
+    it('Should render the info modal if showInfoModal is true', () => {
+        const wrapper = shallow(<Header showInfoModal={true} />);
+        expect(wrapper.find(InfoModal).exists()).toEqual(true);
     });
 });
