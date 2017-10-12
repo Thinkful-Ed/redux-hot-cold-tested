@@ -10,7 +10,7 @@ describe('<Header />', () => {
     });
 
     it('Hides the info modal if showInfoModal is false', () => {
-        const wrapper = shallow(<Header showInfoModal={false}/>);
+        const wrapper = shallow(<Header showInfoModal={false} />);
         expect(wrapper.find(InfoModal).exists()).toEqual(false);
     });
 
