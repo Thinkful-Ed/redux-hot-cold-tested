@@ -5,8 +5,6 @@ import { makeGuess } from '../actions';
 
 import './guess-form.css';
 
-import './guess-form.css';
-
 export class GuessForm extends React.Component {
   onSubmit(event) {
     event.preventDefault();
