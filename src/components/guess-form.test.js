@@ -9,7 +9,7 @@ describe('<GuessForm />', () => {
     shallow(<GuessForm />);
   });
 
-  it('Should fire the onMakeGuess callback when the form is submitted', () => {
+  it('Should dispatch onMakeGuess when the form is submitted', () => {
     const dispatch = jest.fn();
     const wrapper = mount(<GuessForm dispatch={dispatch} />);
     const value = '10';
