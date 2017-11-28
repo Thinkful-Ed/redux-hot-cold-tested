@@ -1,18 +1,18 @@
 import {
-    NEW_GAME,
-    newGame,
+    RESTART_GAME,
+    restartGame,
     MAKE_GUESS,
     makeGuess,
-    TOGGLE_INFO_MODAL,
-    toggleInfoModal
+    generateAuralUpdate,
+    GENERATE_AURAL_UPDATE
 } from './actions';
 
-describe('newGame', () => {
+describe('restartGame', () => {
     it('Should return the action', () => {
-        const action = newGame();
-        expect(action.type).toEqual(NEW_GAME);
-        expect(action.correctAnswer).toBeGreaterThanOrEqual(0);
-        expect(action.correctAnswer).toBeLessThanOrEqual(100);
+        const correctAnswer = 10;
+        const action = restartGame(correctAnswer);
+        expect(action.type).toEqual(RESTART_GAME);
+        expect(action.correctAnswer).toEqual(correctAnswer);
     });
 });
 
@@ -25,9 +25,9 @@ describe('makeGuess', () => {
     });
 });
 
-describe('toggleInfoModal', () => {
+describe('generateAuralUpdate', () => {
     it('Should return the action', () => {
-        const action = toggleInfoModal();
-        expect(action.type).toEqual(TOGGLE_INFO_MODAL);
+        const action = generateAuralUpdate();
+        expect(action.type).toEqual(GENERATE_AURAL_UPDATE);
     });
 });
